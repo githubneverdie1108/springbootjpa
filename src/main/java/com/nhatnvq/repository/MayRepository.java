@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.nhatnvq.entities.May;
 
 
-public interface MayRepository  extends CrudRepository<May, String>{
+public interface MayRepository extends CrudRepository<May, String>{
 	@Query("SELECT m FROM May m WHERE m.viTri = ?")
 	List<May> getListByViTri(String viTri);
 
