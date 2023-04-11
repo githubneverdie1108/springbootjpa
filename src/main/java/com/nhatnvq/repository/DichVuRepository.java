@@ -1,8 +1,12 @@
 package com.nhatnvq.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
-import com.nhatnvq.entities.DichVu;
+import com.nhatnvq.entities.May;
 
-public interface DichVuRepository extends CrudRepository<DichVu, String>{
+public interface DichVuRepository{
+	List<May> getAll();
+	May getMay(String maMay);
+	void save(May may);
+	void delete(String maMay);
 }

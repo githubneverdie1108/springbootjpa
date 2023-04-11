@@ -1,4 +1,4 @@
-package com.nhatnvq;
+package com.nhatnvq.controller;
 
 import java.util.List;
 
@@ -21,6 +21,11 @@ public class MayResourc {
 	@GetMapping("/mayList")
 	public List<May> getAllMay() {
 		return (List<May>)mayRepo.findAll();
+	}
+	
+	@GetMapping("/mayList/{viTri}")
+	public List<May> getAllMay(@PathVariable String viTri) {
+		return (List<May>)mayRepo.getListByViTri(viTri);
 	}
 	
 	@GetMapping("/may/{maMay}")
